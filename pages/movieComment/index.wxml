@@ -1,0 +1,20 @@
+<import src="../../template/comment/list.wxml" />
+
+<view class="g-page">
+  <view class="tab-wrap" bindtap="onTapTab">
+    <text class="tab-item{{order_by === 'hot' ? ' active' : ''}}" data-order-by="hot">热门</text>
+    <text class="tab-item{{order_by === 'latest' ? ' active' : ''}}" data-order-by="latest">最新</text>
+  </view>
+  <scroll-view
+    class="scroll-wrap"
+    scroll-y
+    enable-back-to-top
+    lower-threshold="200"
+    scroll-top="{{scrollTop}}"
+    bindscrolltolower="onScrollToLower"
+    bindscroll="onScroll">
+    <template wx:if="{{comments.length}}" is="comment-list" data="{{list: comments}}" />
+    <text wx:else class="g-nocontent">暂无评论~</text>
+    <text class="g-loading g-loading-more" hidden="{{!isLoading}}">加载中...</text>
+  </scroll-view>
+</view>

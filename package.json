@@ -1,0 +1,20 @@
+{
+  "name": "wx-liancheng",
+  "version": "1.0.0",
+  "description": "A application of weichat.",
+  "author": "liancheng",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansenhuang/wx-liancheng.git"
+  },
+  "keywords": [
+    "javascript",
+    "wechat"
+  ],
+  "author": "Ansen Huang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ansenhuang/wx-liancheng/issues"
+  },
+  "homepage": "https://github.com/ansenhuang/wx-liancheng#readme"
+}

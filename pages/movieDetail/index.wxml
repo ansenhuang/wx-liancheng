@@ -1,0 +1,45 @@
+<import src="../../template/star/star.wxml" />
+<import src="../../template/actor/scrollbar.wxml" />
+<import src="../../template/comment/list.wxml" />
+
+<view class="g-page" hidden="{{!showPage}}">
+  <view class="image-wrap">
+    <image src="{{detail.pic.large}}" class="image-filter" mode="aspectFill" />
+    <image src="{{detail.pic.large}}" class="image-show" mode="aspectFit" />
+  </view>
+  <view class="info-wrap">
+    <view class="info-movie">
+      <text class="info-movie-title">{{detail.title}}</text>
+      <text class="info-text">{{detail.year}} / {{detail.countries}}</text>
+      <text class="info-text">类型：{{detail.genres}}</text>
+      <text class="info-text" wx:if="{{detail.original_title}}">原名：{{detail.original_title}}</text>
+      <text class="info-text">上映时间：{{detail.pubdate}}</text>
+      <text class="info-text">影片时长：{{detail.durations}}</text>
+    </view>
+    <view class="info-rate">
+      <text class="info-text-small">综合评分</text>
+      <text class="info-rate-score">{{detail.rating.value}}</text>
+      <template is="star" data="{{value: detail.rating.value}}" />
+      <text class="info-text-small">{{detail.review_count}}人看过</text>
+    </view>
+  </view>
+  <view class="common-wrap">
+    <text class="common-title">剧情简介</text>
+    <text class="summary-text">{{detail.intro}}</text>
+  </view>
+  <view class="common-wrap">
+    <text class="common-title">导演</text>
+    <template is="scrollbar" data="{{actors: detail.directors}}" />
+  </view>
+  <view class="common-wrap">
+    <text class="common-title">主演</text>
+    <template is="scrollbar" data="{{actors: detail.actors}}" />
+  </view>
+  <view class="common-wrap">
+    <text class="common-title">评论</text>
+    <template is="comment-list" data="{{list: interests}}" />
+    <navigator url="/pages/movieComment/index?id={{detail.id}}">
+      <button class="comment-more" type="primary" plain>全部评论{{totalComment}}条</button>
+    </navigator>
+  </view>
+</view>

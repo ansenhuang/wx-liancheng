@@ -1,0 +1,22 @@
+<import src="../star/star.wxml" />
+
+<template name="comment-list">
+  <view class="comment-list">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <view class="comment-item">
+        <image class="comment-avatar" src="{{item.user.avatar}}" mode="aspectFill" />
+        <view class="comment-content">
+          <view class="comment-header">
+            <text class="comment-user">{{item.user.name}}</text>
+            <template is="star" data="{{value: item.rating.value}}" />
+          </view>
+          <text class="comment-text">{{item.comment}}</text>
+          <view class="comment-footer">
+            <text class="comment-date">{{item.create_time}}</text>
+            <text class="comment-vote">{{item.vote_count}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

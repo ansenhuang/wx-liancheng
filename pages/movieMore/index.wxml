@@ -1,0 +1,13 @@
+<import src="../../template/movie/card.wxml" />
+
+<view class="g-page">
+  <scroll-view
+    class="scroll-wrap"
+    scroll-y
+    enable-back-to-top
+    lower-threshold="200"
+    bindscrolltolower="onScrollToLower">
+    <template is="card" data="{{subjects}}" />
+    <text class="g-loading g-loading-more" hidden="{{!isLoading}}">加载中...</text>
+  </scroll-view>
+</view>

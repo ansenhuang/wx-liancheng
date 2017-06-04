@@ -1,0 +1,10 @@
+<template name="scrollbar">
+  <scroll-view class="actor-list" scroll-x>
+    <block wx:for="{{actors}}" wx:key="{{index}}">
+      <view class="actor-item">
+        <image src="{{item.avatar.normal}}" mode="aspectFill" />
+        <text class="g-text-overflow actor-item-name">{{item.name}}</text>
+      </view>
+    </block>
+  </scroll-view>
+</template>

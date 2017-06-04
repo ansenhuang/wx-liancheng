@@ -1,0 +1,31 @@
+@import '../../template/comment/index.wxss';
+
+.tab-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+  background-color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.tab-item {
+  flex-grow: 1;
+  color: #999;
+  border-bottom: 4rpx solid transparent;
+}
+
+.tab-item.active {
+  color: #42bd56;
+  border-bottom-color: #42bd56;
+}
+
+.scroll-wrap {
+  height: 100vh;
+  padding: 80rpx 20rpx 0;
+  box-sizing: border-box;
+}

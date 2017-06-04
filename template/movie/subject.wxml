@@ -1,0 +1,14 @@
+<import src="card.wxml" />
+
+<template name="subject">
+  <view class="subject">
+    <view class="subject-header">
+      <text class="subject-name">{{name}}</text>
+      <navigator url="/pages/movieMore/index?key={{key}}" class="subject-more">更多</navigator>
+    </view>
+    <scroll-view wx:if="{{subjects.length}}" scroll-x class="subject-list">
+      <template is="card" data="{{subjects}}" />
+    </scroll-view>
+    <view wx:else class="g-loading subject-loading">加载中...</view>
+  </view>
+</template>

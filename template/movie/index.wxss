@@ -1,0 +1,59 @@
+@import '../star/index.wxss';
+
+.subject {
+  padding: 0 20rpx;
+}
+
+.subject-header {
+  margin-top: 20rpx;
+}
+
+.subject-name {
+  font-weight: bold;
+}
+
+.subject-more {
+  float: right;
+  color: #42bd56;
+}
+
+.subject-list {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.subject-item {
+  display: inline-block;
+  width: 200rpx;
+  margin: 20rpx 20rpx 20rpx 0;
+}
+
+.subject-item:last-child {
+  margin-right: 0;
+}
+
+.subject-item image {
+  width: 200rpx;
+  height: 284rpx;
+}
+
+.subject-item-title {
+  text-align: center;
+}
+
+.subject-rate {
+  padding: 0 20rpx;
+}
+
+.subject-rate-score {
+  font-size: 22rpx;
+  color: #aaa;
+  margin-left: 20rpx;
+}
+
+.subject-loading {
+  margin: 20rpx 0;
+  line-height: 400rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 0 10rpx #ccc;
+}

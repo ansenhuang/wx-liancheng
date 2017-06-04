@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/movie/index",
+    "pages/movieMore/index",
+    "pages/movieDetail/index",
+    "pages/movieComment/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#42bd56",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "连城诀",
+    "backgroundColor": "#eee",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

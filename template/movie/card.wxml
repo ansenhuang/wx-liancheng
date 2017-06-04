@@ -1,0 +1,14 @@
+<import src="../star/star.wxml" />
+
+<template name="card">
+  <block wx:for="{{subjects}}" wx:key="{{index}}">
+    <navigator url="/pages/movieDetail/index?id={{item.id}}" class="subject-item">
+      <image src="{{item.cover.url}}" mode="aspectFill" />
+      <text class="g-text-overflow subject-item-title">{{item.title}}</text>
+      <view class="subject-rate">
+        <template is="star" data="{{value: item.rating.value}}" />
+        <text class="subject-rate-score">{{item.rating.value}}</text>
+      </view>
+    </navigator>
+  </block>
+</template>

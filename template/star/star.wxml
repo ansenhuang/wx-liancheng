@@ -1,0 +1,5 @@
+<template name="star">
+  <view class="star star-gray">
+    <view class="star star-full" style="width:{{value * 10}}%"></view>
+  </view>
+</template>

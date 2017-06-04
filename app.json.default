@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/movie/index",
+    "pages/movieMore/index",
+    "pages/movieDetail/index",
+    "pages/movieComment/index",
+    "pages/people/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#42bd56",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "连城诀",
+    "backgroundColor": "#eee",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#42bd56",
+    "backgroundColor": "#fff",
+    "borderStyle": "dark",
+    "position": "bottom",
+    "list": [
+      {
+        "text": "主页",
+        "pagePath": "pages/home/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_fill.png"
+      },
+      {
+        "text": "电影",
+        "pagePath": "pages/movie/index",
+        "iconPath": "images/movie.png",
+        "selectedIconPath": "images/movie_fill.png"
+      },
+      {
+        "text": "我",
+        "pagePath": "pages/people/index",
+        "iconPath": "images/people.png",
+        "selectedIconPath": "images/people_fill.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

@@ -1,0 +1,12 @@
+@import '../../template/movie/index.wxss';
+
+.scroll-wrap {
+  height: 100vh;
+  padding: 0 45rpx;
+  box-sizing: border-box;
+}
+
+.subject-item {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
