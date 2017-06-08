@@ -53,6 +53,8 @@
 
 .subject-loading {
   margin: 20rpx 0;
+  color: #aaa;
+  text-align: center;
   line-height: 400rpx;
   border-radius: 8rpx;
   box-shadow: 0 0 10rpx #ccc;

@@ -26,6 +26,14 @@
 
 .scroll-wrap {
   height: 100vh;
-  padding: 80rpx 20rpx 0;
+  margin-top: 80rpx;
   box-sizing: border-box;
+}
+
+.nocontent-text {
+  display: block;
+  font-size: 24rpx;
+  color: #aaa;
+  text-align: center;
+  line-height: 80rpx;
 }

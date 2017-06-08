@@ -1,12 +1,12 @@
 @import '../star/index.wxss';
 
 .comment-list {
-  padding: 10rpx 0;
+  padding: 0 20rpx;
 }
 
 .comment-item {
   display: flex;
-  margin: 10rpx 0;
+  margin: 20rpx 0;
 }
 
 .comment-avatar {

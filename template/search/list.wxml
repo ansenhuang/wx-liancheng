@@ -1,0 +1,21 @@
+<import src="../star/star.wxml" />
+
+<template name="search-list">
+  <view class="search-list">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <navigator url="/pages/movieDetail/index?id={{item.id}}" class="search-item">
+        <image class="search-image" src="{{item.images.small}}" mode="aspectFill" />
+        <view class="search-content">
+          <view class="search-title">{{item.title}}</view>
+          <view class="search-rate">
+            <template is="star" data="{{value: item.rating.average}}" />
+            <text class="search-rate-score">{{item.rating.average}}</text>
+          </view>
+          <view class="search-names">类型：{{item.genres}}</view>
+          <view class="search-names">导演：<text wx:for="{{item.directors}}" wx:for-item="director" wx:for-index="i" wx:key="{{i}}">{{director.name + (item.directors.length !== i + 1 ? ',' : '')}}</text></view>
+          <view class="search-names">主演：<text wx:for="{{item.casts}}" wx:for-item="cast" wx:for-index="i" wx:key="{{i}}">{{cast.name + (item.casts.length !== i + 1 ? ',' : '')}}</text></view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</template>

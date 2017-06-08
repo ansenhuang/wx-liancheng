@@ -5,15 +5,17 @@ Page({
   data: {
     order_by: '',
     scrollTop: 0,
-    isLoading: false,
+    isEnd: false,
     comments: []
   },
   state: {
+    isFetching: false,
     count: 18,
     hot: {
       start: 0,
       total: 0,
       scrollTop: 0,
+      scrollHeight: 0,
       comments: [],
       isEnd: false
     },
@@ -21,6 +23,7 @@ Page({
       start: 0,
       total: 0,
       scrollTop: 0,
+      scrollHeight: 0,
       comments: [],
       isEnd: false
     }
@@ -50,16 +53,12 @@ Page({
     let order_by = this.data.order_by
     let item = this.state[order_by]
 
-    if (this.data.isLoading || item.isEnd) return
+    if (this.state.isFetching || item.isEnd) return
 
-    if (options.isFirst) {
-      wx.showLoading({ title: '加载中...' })
-    } else {
-      this.setData({ isLoading: true })
-    }
+    this.state.isFetching = true
 
     const self = this
-    const count = this.state.count
+    const { count } = this.state
     let start = item.start
 
     doubanApi.movieInterests({
@@ -72,17 +71,18 @@ Page({
         order_by
       },
       success (resData) {
+        self.state.isFetching = false
         item.start = start + count
         item.total = resData.total || 0
         // 判断是否为最后一页
-        if (item.start >= item.total) {
-          item.isEnd = true
-        }
+        item.isEnd = item.start >= item.total
 
         item.comments = item.comments.concat(resData.interests || [])
-        self.setData({ comments: item.comments, isLoading: false })
-
-        options.isFirst && wx.hideLoading()
+        self.setData({
+          isEnd: item.isEnd,
+          comments: item.comments
+        })
+        
         options.isPull && wx.stopPullDownRefresh()
       }
     })
@@ -91,7 +91,11 @@ Page({
     this.requestData()
   }),
   onScroll: throttle(function (ev) {
-    this.state[this.data.order_by].scrollTop = ev.detail.scrollTop
+    let item = this.state[this.data.order_by]
+    let { scrollTop, scrollHeight } = ev.detail
+
+    item.scrollTop = scrollTop
+    item.scrollHeight = scrollHeight
   }, 50),
   onTapTab (ev) {
     let order_by = ev.target.dataset.orderBy
@@ -99,9 +103,15 @@ Page({
     if (this.data.order_by !== order_by) {
       let { comments, scrollTop } = this.state[order_by]
 
-      this.setData({ comments, order_by, scrollTop, isLoading: false })
+      this.setData({ 
+        comments, 
+        order_by, 
+        scrollTop,  
+        isEnd: false
+      })
 
       if (comments.length === 0) {
+        this.state.isFetching = false
         this.requestData({ isFirst: true })
       }
     }

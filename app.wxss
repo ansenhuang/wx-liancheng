@@ -15,12 +15,6 @@
   overflow-x: hidden;
 }
 
-.g-loading {
-  display: block;
-  font-size: 24rpx;
-  color: #aaa;
-  text-align: center;
-}
 .g-loading::before {
   content: '';
   display: inline-block;
@@ -32,15 +26,27 @@
   background-size: 100%;
   margin-right: 4rpx;
 }
-.g-loading-more {
+.g-loading-text {
+  display: block;
+  font-size: 24rpx;
+  color: #aaa;
+  text-align: center;
   line-height: 60rpx;
   border-top: 1rpx solid #eee;
 }
 
-.g-nocontent {
-  display: block;
+.g-search-wrap {
+  padding: 16rpx;
+  background-color: #42bd56;
+}
+
+.g-search-input {
   font-size: 28rpx;
-  color: #aaa;
+  padding: 8rpx 14rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+}
+
+.g-search-placeholder {
   text-align: center;
-  line-height: 80rpx;
 }

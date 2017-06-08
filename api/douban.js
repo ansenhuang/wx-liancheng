@@ -69,6 +69,27 @@ export default request({
         default: 'hot' // latest
       }
     }
+  },
+  // 电影搜索
+  movieSearch: {
+    url: 'https://api.douban.com/v2/movie/search',
+    method: 'GET',
+    data: {
+      start: {
+        type: Number,
+        default: 0
+      },
+      count: {
+        type: Number,
+        default: 20
+      },
+      q: {
+        type: String
+      },
+      tag: {
+        type: String
+      }
+    }
   }
 }, {
   'Content-Type': 'application/x-www-form-urlencode'

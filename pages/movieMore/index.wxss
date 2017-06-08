@@ -2,8 +2,11 @@
 
 .scroll-wrap {
   height: 100vh;
-  padding: 0 45rpx;
   box-sizing: border-box;
+}
+
+.card-wrap {
+  padding: 0 45rpx;
 }
 
 .subject-item {

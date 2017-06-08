@@ -27,15 +27,15 @@
     <text class="common-title">剧情简介</text>
     <text class="summary-text">{{detail.intro}}</text>
   </view>
-  <view class="common-wrap">
+  <view wx:if="{{detail.directors.length}}" class="common-wrap">
     <text class="common-title">导演</text>
     <template is="scrollbar" data="{{actors: detail.directors}}" />
   </view>
-  <view class="common-wrap">
+  <view wx:if="{{detail.actors.length}}" class="common-wrap">
     <text class="common-title">主演</text>
     <template is="scrollbar" data="{{actors: detail.actors}}" />
   </view>
-  <view class="common-wrap">
+  <view wx:if="{{interests.length}}" class="common-wrap">
     <text class="common-title">评论</text>
     <template is="comment-list" data="{{list: interests}}" />
     <navigator url="/pages/movieComment/index?id={{detail.id}}">

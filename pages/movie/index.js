@@ -28,5 +28,10 @@ Page({
         }
       })
     })
+  },
+  onSearchFocus () {
+    wx.navigateTo({
+      url: '/pages/movieSearch/index'
+    })
   }
 })

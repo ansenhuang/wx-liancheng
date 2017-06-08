@@ -1,6 +1,14 @@
 <import src="../../template/movie/subject.wxml" />
 
 <view class="g-page">
+  <view class="g-search-wrap">
+    <input
+      type="text"
+      placeholder="搜索"
+      class="g-search-input"
+      placeholder-class="g-search-placeholder"
+      bindfocus="onSearchFocus" />
+  </view>
   <block wx:for="{{movies}}" wx:for-index="key" wx:for-item="item" wx:key="{{key}}">
     <template is="subject" data="{{...item}}" />
   </block>

@@ -2,6 +2,7 @@
   "pages": [
     "pages/movie/index",
     "pages/movieMore/index",
+    "pages/movieSearch/index",
     "pages/movieDetail/index",
     "pages/movieComment/index"
   ],

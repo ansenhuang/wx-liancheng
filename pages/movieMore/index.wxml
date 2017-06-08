@@ -7,7 +7,10 @@
     enable-back-to-top
     lower-threshold="200"
     bindscrolltolower="onScrollToLower">
-    <template is="card" data="{{subjects}}" />
-    <text class="g-loading g-loading-more" hidden="{{!isLoading}}">加载中...</text>
+    <view class="card-wrap">
+      <template is="card" data="{{subjects}}" />
+    </view>
+    <text wx:if="{{!isEnd}}" class="g-loading g-loading-text">加载中...</text>
+    <text wx:else class="g-loading-text">没有更多电影了~</text>
   </scroll-view>
 </view>

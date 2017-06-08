@@ -6,7 +6,7 @@
 .actor-item {
   display: inline-block;
   width: 200rpx;
-  margin: 20rpx 20rpx 20rpx 0;
+  margin-right: 20rpx;
 }
 
 .actor-item:last-child {

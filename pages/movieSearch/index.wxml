@@ -1,0 +1,29 @@
+<import src="../../template/search/list.wxml" />
+
+<view class="g-page">
+  <view class="g-search-wrap search-wrap">
+    <input
+      type="text"
+      placeholder="搜索"
+      class="g-search-input search-input"
+      placeholder-class="g-search-placeholder search-placeholder"
+      focus
+      confirm-type="search"
+      bindinput="onSearchInput" />
+    <text class="search-cancel" bindtap="onCancel">取消</text>
+  </view>
+  <scroll-view
+    class="scroll-wrap"
+    scroll-y
+    enable-back-to-top
+    lower-threshold="200"
+    bindscrolltolower="onScrollToLower">
+    <text wx:if="{{status === 2 || status === 3}}" class="g-loading-text loading-text-total">共{{total}}条结果</text>
+
+    <template is="search-list" data="{{list: subjects}}" />
+
+    <text wx:if="{{status === 1}}" class="g-loading-text">暂无内容~</text>
+    <text wx:elif="{{status === 2}}" class="g-loading-text">没有更多内容了~</text>
+    <text wx:elif="{{status === 3}}" class="g-loading g-loading-text loading-text-search">搜索中...</text>
+  </scroll-view>
+</view>

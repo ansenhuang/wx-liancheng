@@ -1,0 +1,33 @@
+@import '../star/index.wxss';
+
+.search-item {
+  display: flex;
+  padding: 20rpx 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.search-image {
+  width: 130rpx;
+  height: 200rpx;
+}
+
+.search-content {
+  flex-grow: 1;
+  padding-left: 20rpx;
+}
+
+.search-rate-score {
+  font-size: 22rpx;
+  color: #aaa;
+  margin-left: 20rpx;
+}
+
+.search-title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.search-names {
+  color: #aaa;
+  font-size: 24rpx;
+}

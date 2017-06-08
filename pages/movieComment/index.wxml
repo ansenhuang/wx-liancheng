@@ -13,8 +13,9 @@
     scroll-top="{{scrollTop}}"
     bindscrolltolower="onScrollToLower"
     bindscroll="onScroll">
-    <template wx:if="{{comments.length}}" is="comment-list" data="{{list: comments}}" />
-    <text wx:else class="g-nocontent">暂无评论~</text>
-    <text class="g-loading g-loading-more" hidden="{{!isLoading}}">加载中...</text>
+    <template is="comment-list" data="{{list: comments}}" />
+
+    <text wx:if="{{!isEnd}}" class="g-loading g-loading-text">加载中...</text>
+    <text wx:else class="g-loading-text">没有更多评论了~</text>
   </scroll-view>
 </view>

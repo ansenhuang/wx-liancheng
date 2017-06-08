@@ -1,0 +1,33 @@
+@import '../../template/search/index.wxss';
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex-grow: 1;
+}
+
+.search-placeholder {
+  text-align: left;
+}
+
+.search-cancel {
+  color: #fff;
+  font-size: 28rpx;
+  padding: 0 20rpx;
+}
+
+.scroll-wrap {
+  height: 100vh;
+}
+
+.loading-text-total {
+  border-top: none;
+  border-bottom: 1rpx solid #eee;
+}
+
+.loading-text-search {
+  border-top: none;
+}
