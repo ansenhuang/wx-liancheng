@@ -29,9 +29,9 @@ Page({
       })
     })
   },
-  onSearchFocus () {
-    wx.navigateTo({
-      url: '/pages/movieSearch/index'
-    })
-  }
+  // onSearchFocus () {
+  //   wx.navigateTo({
+  //     url: '/pages/movieSearch/index'
+  //   })
+  // }
 })
